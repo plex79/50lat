@@ -1,0 +1,3 @@
+https://github.com/wimbarelds/TimeCircles
+
+http://kottenator.github.io/jquery-circle-progress/
