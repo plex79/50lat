@@ -1,0 +1,34 @@
+{
+  "name": "50lat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plex79/50lat.git"
+  },
+  "author": "plex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plex79/50lat/issues"
+  },
+  "homepage": "https://github.com/plex79/50lat#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^7.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
