@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	let htmlBody = $('html, body');
 	let hash = window.location.hash;
 	if(hash != '') {
@@ -41,7 +42,7 @@ $(document).ready(function() {
 	});
 
 	//wyskakujaca belka pod tlem ---------------------------
-	$('.jq-okonferencji').waypoint(function(direction){
+	$('.jq-historia').waypoint(function(direction){
 		if(direction=="down") {
 			$('nav.navbar').addClass('tlo');
 		} else {
@@ -49,11 +50,22 @@ $(document).ready(function() {
 		}
 	}, {offset: 85});
 
+	// guzik do gory ----------------------------------------
+	$('.jq-gallery').waypoint(function(direction){
+		if(direction=="down") {
+			$('.do-gory').removeClass('ukryj');
+		} else {
+			$('.do-gory').addClass('ukryj');
+		}
+	}, {offset: 0});
+
+
 	// menu plus history state ------------------------------
 	let menu = $('#navbar ul.nav li a');
 	let strzalka = $('.arrow a');
+	let doGory = $('.do-gory');
 
-	menu.add(strzalka).on('click', function(e){
+	menu.add(strzalka).add(doGory).on('click', function(e){
 		e.preventDefault();
 
 		var element = $(this).attr('href');
@@ -87,4 +99,3 @@ $(document).ready(function() {
 	// menu plus history state end ---------------------------
 
 });
-//ssasdsdsdsaaaaaaaaaaaaaa

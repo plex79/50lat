@@ -1,6 +1,33 @@
 body {
     font-family: 'Quicksand', sans-serif;
 }
+
+.do-gory {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(145, 0, 0, 0.7);
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    visibility: visible;
+    opacity: 1;
+    transition: all .5s;
+}
+.do-gory:hover {
+    background-color: rgba(145, 0, 0, 1);
+    color: white;
+    transform: translateY(-5px);
+}
+.ukryj {
+    visibility: hidden;
+    opacity: 0;
+}
 header {
     background-image: linear-gradient(rgba(72, 1, 1, 0.4), rgba(0, 58, 92, 0.5)), url('../img/tlo1.jpg');
     background-size: cover;
@@ -121,13 +148,21 @@ section.sec2 .myGallery{
 section.sec2 > div > div > figure {
 	overflow: hidden;
 }
-section.sec2 > div > div > figure > img {
+section.sec2 > div > div > figure > a img {
 	width: 100%;
 	height: auto;
 	opacity: .8;
 	transition: all .3s;
 }
-section.sec2 > div > div > figure > img:hover {
+section.sec2 > div > div > figure > a img:hover {
 	opacity: 1;
 	transform: scale(1.03);
+}
+.h-line {
+	display: inline-block;
+}
+.h-line:after {
+	content: "";
+	display: block;
+	border-bottom: 2px solid orange;
 }
