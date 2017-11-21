@@ -2,7 +2,7 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 header {
-    background-image: linear-gradient(rgba(72,1,1,0.5), rgba(0, 58, 92, 0.5)), url('../img/tlo1.jpg');
+    background-image: linear-gradient(rgba(72, 1, 1, 0.4), rgba(0, 58, 92, 0.5)), url('../img/tlo1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,13 +39,27 @@ nav.tlo {
 }
 
 .navbar-default #navbar ul li a:hover {
-	border-bottom: 2px solid #d44bcd;
+	border-bottom: 2px solid #ffffff;
+}
+.navbar-brand {
+    height: 80px;
+    padding-top: 5px;
+}
+
+.nav >li >a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.navbar-toggle {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
 }
 
 .slogan {
     position: absolute;
     top: 40%;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%,-40%);
 }
 
 .slogan h1,
@@ -53,61 +67,67 @@ nav.tlo {
     text-align: center;
     color: white;
 }
+.slogan h1 {
+    font-size: 80px;
+}
+.slogan p {
+    font-size: 30px;
+}
+div.time_circles {
+    color: rgba(255,255,255,0.7);
+}
+.story p {
+    text-align: justify;
+    font-size: 1.5em;
+}
+.arrow {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    font-size: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: arrow 1s infinite;
+}
+.arrow a {
+    color: white;
+}
+.arrow a i {
+    cursor: pointer;
+}
+@keyframes arrow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-.clock-item .inner {
-	height: 0px;
-	padding-bottom: 100%;
-	position: relative;	
+section.sec2,
+section.sec2 > .row {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+section.sec2 .myGallery{
+	padding-left: 0;
+	padding-right: 0;
+}
+section.sec2 > div > div > figure {
+	overflow: hidden;
+}
+section.sec2 > div > div > figure > img {
 	width: 100%;
+	height: auto;
+	opacity: .8;
+	transition: all .3s;
 }
-
-.clock-canvas {
-	background-color: rgba(255, 255, 255, .1);
-	border-radius: 50%;
-	height: 0px;
-	padding-bottom: 100%;
-}
-
-.text {
-	color: #fff;	
-	font-size: 30px;
-	font-weight: bold;	
-	margin-top: -50px;
-	position: absolute;
-	top: 50%;
-	text-align: center;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-	width: 100%;
-}
-
-.text .val {
-	font-size: 50px;
-}
-
-.text .type-time {
-	font-size: 20px;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-	.clock-item {
-		margin-bottom: 30px;		
-	}
-}
-
-@media (max-width: 767px) {
-
-	.clock-item {
-		margin: 5px 0px 5px 0px;
-    }
-
-    .text {
-        margin-top: -30px;
-    }
-    .text .val {
-        font-size: 30px;
-    }
-    
-    .text .type-time {
-        font-size: 10px;
-    }
+section.sec2 > div > div > figure > img:hover {
+	opacity: 1;
+	transform: scale(1.03);
 }

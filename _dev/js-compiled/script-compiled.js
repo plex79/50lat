@@ -1,14 +1,91 @@
 'use strict';
 
 $(document).ready(function () {
-	var seconds = new Date().getTime() / 1000;
-	var endTime = '1567771200';
+	var htmlBody = $('html, body');
+	var hash = window.location.hash;
+	if (hash != '') {
+		htmlBody.animate({
+			scrollTop: $(hash).offset().top - 80
+		}, 500);
+	} else {
+		htmlBody.animate({
+			scrollTop: $('header').offset().top
+		}, 500);
+	}
 
-	$('.countdown').final_countdown({
-		'start': 1362139200,
-		'end': endTime,
-		'now': seconds
+	$("#DateCountdown").TimeCircles({
+		"animation": "ticks",
+		"bg_width": 1,
+		"fg_width": 0.04,
+		"circle_bg_color": "rgba(0,0,0,0.1)",
+		"time": {
+			"Days": {
+				"text": "Dni",
+				"color": "rgba(255,255,255,0.7)",
+				"show": true
+			},
+			"Hours": {
+				"text": "Godziny",
+				"color": "rgba(255,255,255,0.7)",
+				"show": true
+			},
+			"Minutes": {
+				"text": "Minuty",
+				"color": "rgba(255,255,255,0.7)",
+				"show": true
+			},
+			"Seconds": {
+				"text": "Sekundy",
+				"color": "rgba(255,255,255,0.7)",
+				"show": true
+			}
+		}
 	});
+
+	//wyskakujaca belka pod tlem ---------------------------
+	$('.jq-okonferencji').waypoint(function (direction) {
+		if (direction == "down") {
+			$('nav.navbar').addClass('tlo');
+		} else {
+			$('nav.navbar').removeClass('tlo');
+		}
+	}, { offset: 85 });
+
+	// menu plus history state ------------------------------
+	var menu = $('#navbar ul.nav li a');
+	var strzalka = $('.arrow a');
+
+	menu.add(strzalka).on('click', function (e) {
+		e.preventDefault();
+
+		var element = $(this).attr('href');
+
+		//hash w adresie url
+		if (history.pushState) {
+			history.pushState(null, null, element);
+		} else {
+			window.location.hash = element;
+		}
+		// hash w url end
+
+		htmlBody.animate({
+			scrollTop: $(element).offset().top - 80
+		}, 500);
+	});
+	// strzalka wstecz w przegladarce
+	window.onpopstate = function (evt) {
+		var hash = window.location.hash;
+		if (hash != '') {
+			htmlBody.animate({
+				scrollTop: $(hash).offset().top - 80
+			}, 500);
+		} else {
+			htmlBody.animate({
+				scrollTop: $('header').offset().top
+			}, 500);
+		}
+	};
+	// menu plus history state end ---------------------------
 });
 //ssasdsdsdsaaaaaaaaaaaaaa
 //# sourceMappingURL=script-compiled.js.map
