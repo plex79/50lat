@@ -222,9 +222,10 @@ section.sec2 > div > div > figure > a img:hover {
     color: #fff;
     background-color: #242424;
     border-color: #242424;
+}
 
 section#kontakt {
-    height: 450px
+    height: 450px;
 }
 
 section#kontakt img {
@@ -236,7 +237,7 @@ section#kontakt img {
 }
 
 footer {
-    height: 50px;
+    height: 100px;
     background-color: rgb(18, 22, 29);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -245,4 +246,4 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     color: white;
-}}
+}
