@@ -166,3 +166,40 @@ section.sec2 > div > div > figure > a img:hover {
 	display: block;
 	border-bottom: 2px solid orange;
 }
+
+#organizacja-container {
+    background-image: linear-gradient(rgba(72, 1, 1, 0.4), rgba(0, 58, 92, 0.5)), url('../img/tlo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#organizacja {
+    color: rgb(230, 230, 230);
+}
+#organizacja div.row {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 20px 0 20px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+section#kontakt {
+    height: 450px
+}
+
+section#kontakt img {
+    max-width: inherit!important
+}
+
+.info-window {
+    color: #2c2c2c;
+}
+
+footer {
+    height: 50px;
+    background-color: rgb(18, 22, 29);
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
