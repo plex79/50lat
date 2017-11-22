@@ -9,26 +9,34 @@ body {
     width: 50px;
     height: 50px;
     background-color: rgba(145, 0, 0, 0.7);
-    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 9999;
     color: white;
     visibility: visible;
     opacity: 1;
+    -webkit-transition: all .5s;
     transition: all .5s;
 }
 .do-gory:hover {
     background-color: rgba(145, 0, 0, 1);
     color: white;
-    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
 }
 .ukryj {
     visibility: hidden;
     opacity: 0;
 }
 header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 1, 1, 0.4)), to(rgba(0, 58, 92, 0.5))), url('../img/tlo1.jpg');
     background-image: linear-gradient(rgba(72, 1, 1, 0.4), rgba(0, 58, 92, 0.5)), url('../img/tlo1.jpg');
     background-size: cover;
     background-position: center;
@@ -40,11 +48,14 @@ header {
 	background-color: transparent !important;
 	border-color: transparent;
 	background-image: none;
-	box-shadow: none;	
+	-webkit-box-shadow: none;
+	        box-shadow: none;	
+	-webkit-transition: all 1s;	
 	transition: all 1s;
 }
 nav.tlo {
 	background-color: rgba(0, 0, 0, 0.75)!important;
+	-webkit-transition: all 1s;
 	transition: all 1s;
 }
 .navbar-default .navbar-header .navbar-brand {
@@ -62,6 +73,7 @@ nav.tlo {
     padding-right: 0;
     margin-right: 20px;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom .3s;
     transition: border-bottom .3s;
 }
 
@@ -86,7 +98,8 @@ nav.tlo {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%,-40%);
+    -webkit-transform: translate(-50%,-40%);
+            transform: translate(-50%,-40%);
 }
 
 .slogan h1,
@@ -113,8 +126,10 @@ div.time_circles {
     bottom: 20px;
     font-size: 40px;
     left: 50%;
-    transform: translateX(-50%);
-    animation: arrow 1s infinite;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-animation: arrow 1s infinite;
+            animation: arrow 1s infinite;
 }
 .arrow a {
     color: white;
@@ -122,15 +137,32 @@ div.time_circles {
 .arrow a i {
     cursor: pointer;
 }
-@keyframes arrow {
+@-webkit-keyframes arrow {
     0% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
     }
     100% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@keyframes arrow {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
@@ -152,11 +184,13 @@ section.sec2 > div > div > figure > a img {
 	width: 100%;
 	height: auto;
 	opacity: .8;
+	-webkit-transition: all .3s;
 	transition: all .3s;
 }
 section.sec2 > div > div > figure > a img:hover {
 	opacity: 1;
-	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	        transform: scale(1.03);
 }
 .h-line {
 	display: inline-block;
@@ -168,6 +202,7 @@ section.sec2 > div > div > figure > a img:hover {
 }
 
 #organizacja-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(72, 1, 1, 0.4)), to(rgba(0, 58, 92, 0.5))), url('../img/tlo2.jpg');
     background-image: linear-gradient(rgba(72, 1, 1, 0.4), rgba(0, 58, 92, 0.5)), url('../img/tlo2.jpg');
     background-size: cover;
     background-position: center;
@@ -179,10 +214,14 @@ section.sec2 > div > div > figure > a img:hover {
 #organizacja div.row {
     background: rgba(0, 0, 0, 0.6);
     margin: 20px 0 20px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
+.list-group-item.black, .list-group-item.black:focus, .list-group-item.black:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #242424;
+    border-color: #242424;
 
 section#kontakt {
     height: 450px
@@ -199,7 +238,11 @@ section#kontakt img {
 footer {
     height: 50px;
     background-color: rgb(18, 22, 29);
-    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-}
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+}}

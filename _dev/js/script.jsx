@@ -68,7 +68,7 @@ $(document).ready(function() {
 	menu.add(strzalka).add(doGory).on('click', function(e){
 		e.preventDefault();
 
-		var element = $(this).attr('href');
+		let element = $(this).attr('href');
 
 		//hash w adresie url
 		if(history.pushState) {
