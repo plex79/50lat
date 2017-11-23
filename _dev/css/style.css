@@ -211,9 +211,9 @@ section.sec2 > div > div > figure > a img:hover {
 #organizacja {
     color: rgb(230, 230, 230);
 }
-#organizacja div.row {
+#organizacja > div > div.col-md-8.informacje > div {
     background: rgba(0, 0, 0, 0.6);
-    margin: 20px 0 20px 0;
+    padding: 0 15px 20px 15px;
     border-radius: 5px;
 }
 
@@ -223,7 +223,20 @@ section.sec2 > div > div > figure > a img:hover {
     background-color: #242424;
     border-color: #242424;
 }
+.komitet-org {
+    margin-top: 20px;
+}
 
+.informacje {
+    margin: 20px 0 20px 0;
+}
+#organizacja > div > div.col-md-8.informacje > div > p {
+    font-size: 1.3em;
+}
+.bank {
+    text-decoration: underline;
+    font-weight: bold;
+}
 section#kontakt {
     height: 450px;
 }
