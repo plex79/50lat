@@ -125,7 +125,7 @@ nav.tlo {
     font-size: 30px;
 }
 div.time_circles {
-    color: rgba(255,255,255,0.7);
+    color: rgb(255,255,255);
 }
 .story p {
     text-align: justify;
@@ -249,7 +249,7 @@ section.sec2 > div > div > figure > a img:hover {
     font-weight: bold;
 }
 section#kontakt {
-    height: 450px;
+    height: 500px;
 }
 
 section#kontakt img {

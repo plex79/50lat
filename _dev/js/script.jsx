@@ -16,7 +16,7 @@ $(document).ready(function() {
 		"animation": "ticks",
 		"bg_width": 1,
 		"fg_width": 0.04,
-		"circle_bg_color": "rgba(0,0,0,0.1)",
+		"circle_bg_color": "rgb(0,0,0,0.1)",
 		"time": {
 			"Days": {
 				"text": "Dni",
@@ -97,5 +97,72 @@ $(document).ready(function() {
 		}
 	};
 	// menu plus history state end ---------------------------
+
+	var modal1 = $('#myModal'),
+		formularz = $('#formularz');
+
+	formularz.validate({ // start validacji
+		ignore: ":hidden",
+		rules: {
+			imie: {
+				required: true,
+				minlength: 3
+			},
+			nazwisko: {
+				required: true,
+				minlength: 3
+			},
+			email: {
+				required: true,
+				email: true
+			}
+		},
+		submitHandler: function (form) {
+
+		   var form_data = new FormData(form); //constructs key/value pairs representing fields and values
+
+		   $.ajax({ //ajax form submit
+			   url : 's.php',
+			   type: 'post',
+			   data : form_data,
+			   dataType : "json",
+			   contentType: false,
+			   cache: false,
+			   processData:false,
+
+
+			   beforeSend:function(res){ // Are not working with dataType:'jsonp'
+				 modal1.modal('show').find('#loading-image').show(); 
+			   },
+			   success:function(res){
+				   if(res.type == "error"){
+				   modal1.modal('show').find('#loading-image').hide(); 
+				   modal1.modal('show').find('.form-komunikat').append(res.text); 
+				   modal1.on('hidden.bs.modal', function () {
+					   //formularz[0].reset();
+					   modal1.find('.form-komunikat').text('');
+					   grecaptcha.reset();  
+				   });                   
+				   }
+				  
+				   if(res.type == "done"){
+					   modal1.modal('show').find('#loading-image').hide(); 
+					   modal1.modal('show').find('.form-komunikat').append(res.text);
+					   modal1.on('hidden.bs.modal', function () {
+						   formularz[0].reset();
+						   modal1.find('.form-komunikat').text('');  
+						   grecaptcha.reset();
+					   });
+
+				   }
+			   }
+
+			   
+
+
+
+		   });
+		}
+	});//koniec validacji
 
 });
